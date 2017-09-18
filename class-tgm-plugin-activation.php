@@ -2155,10 +2155,12 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		}
 	}
 
-	if ( did_action( 'plugins_loaded' ) ) {
-		load_tgm_plugin_activation();
-	} else {
-		add_action( 'plugins_loaded', 'load_tgm_plugin_activation' );
+	if ( function_exists( 'did_action' ) && function_exists( 'add_action' ) ) {
+		if ( did_action( 'plugins_loaded' ) ) {
+			load_tgm_plugin_activation();
+		} else {
+			add_action( 'plugins_loaded', 'load_tgm_plugin_activation' );
+		}
 	}
 }
 
@@ -3196,7 +3198,13 @@ if ( ! class_exists( 'TGM_Bulk_Installer_Skin' ) ) {
  *
  * @since 2.2.0
  */
-add_action( 'admin_init', 'tgmpa_load_bulk_installer' );
+
+if( function_exists( 'add_action' ) ) {
+	
+	add_action( 'admin_init', 'tgmpa_load_bulk_installer' );
+	
+}
+
 if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 	/**
 	 * Load bulk installer
