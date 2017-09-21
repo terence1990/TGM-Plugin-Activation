@@ -29,6 +29,9 @@
     "php": ">=5.2"
   },
   "autoload": {
+  	"psr-4": {
+        "TGM\\": "classes" 
+    },
     "files": ["class-tgm-plugin-activation.php"]
   }
 }
