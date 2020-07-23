@@ -12,6 +12,8 @@
 
 ## Description
 
+**This fork makes TGM-Plugin-Activation comply with psr-4 standards and removes autoloaded files which contain references to Wordpress functions that may not be available when Composer vendor autloads are invoked. This essentially makes TGM-Plugin-Activation compatible with frameworks such as Bedrock and Themosis**
+
 TGM Plugin Activation is a PHP library that allows you to easily require or recommend plugins for your WordPress themes (and plugins). It allows your users to install, update and even automatically activate plugins in singular or bulk fashion using native WordPress classes, functions and interfaces. You can reference bundled plugins, plugins from the WordPress Plugin Repository or even plugins hosted elsewhere on the internet.
 
 ## Installation
